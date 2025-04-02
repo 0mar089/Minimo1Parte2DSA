@@ -30,10 +30,10 @@ public class ProductsManagerImpl implements ProductsManager {
     }
 
     public Product addProduct(Product t) {
-        logger.info("new Track " + t);
+        logger.info("new Product " + t);
 
         this.Products.add (t);
-        logger.info("new Track added");
+        logger.info("new Product added");
         return t;
     }
 
@@ -41,16 +41,16 @@ public class ProductsManagerImpl implements ProductsManager {
         return this.addProduct(id, name, 0.0);
     }
 
-    public Product addProduct(String id, String title, Double price) {
-        return this.addProduct(new Product(id, title, price));
+    public Product addProduct(String id, String name, Double price) {
+        return this.addProduct(new Product(id, name, price));
     }
 
     public Product getProduct(String id) {
-        logger.info("getTrack("+id+")");
+        logger.info("getProduct("+id+")");
 
         for (Product t: this.Products) {
             if (t.getId().equals(id)) {
-                logger.info("getTrack("+id+"): "+t);
+                logger.info("getProduct("+id+"): "+t);
 
                 return t;
             }

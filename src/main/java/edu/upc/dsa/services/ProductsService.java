@@ -80,9 +80,9 @@ public class ProductsService {
             @ApiResponse(code = 404, message = "Product not found")
     })
     @Path("/")
-    public Response updateTrack(Product track) {
+    public Response updateProduct(Product product) {
 
-        Product t = this.tm.updateProduct(track);
+        Product t = this.tm.updateProduct(product);
 
         if (t == null) return Response.status(404).build();
 
@@ -101,7 +101,7 @@ public class ProductsService {
 
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response newTrack(Product product) {
+    public Response newProduct(Product product) {
 
         if (product.getId()==null || product.getName()==null)  return Response.status(500).entity(product).build();
         this.tm.addProduct(product);

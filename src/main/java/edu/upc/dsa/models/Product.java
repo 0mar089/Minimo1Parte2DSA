@@ -7,6 +7,8 @@ public class Product {
     double price;
     int sales;
 
+    public Product(){}
+
     public Product(String id, String name, double price) {
         this.id = id;
         this.name = name;
@@ -17,22 +19,23 @@ public class Product {
         return this.sales;
     }
 
-    public double getPrice() {
-        return this.price;
-    }
-
     public void UpSales() {
         ++this.sales;
+    }
+
+
+    public double getPrice() {
+        return this.price;
     }
 
     public String getName() {
         return this.name;
     }
 
-
     public String getId() {
         return this.id;
     }
+
 
     public void setId(String id) {
         this.id = id;
